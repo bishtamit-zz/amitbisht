@@ -1,0 +1,11 @@
+<nav>
+    <<a href="{% url 'admin:index' %}">Admin</a>>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'account:logout' %}">logout</a>
+    {% else %}
+        <a href="{% url 'account:login' %}">Login</a> /
+        <a href="{% url 'account:signup' %}">Signup</a>
+        <hr>
+    {% endif %}
+</nav>

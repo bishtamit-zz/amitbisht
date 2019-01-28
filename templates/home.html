@@ -1,0 +1,11 @@
+{% extends  'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h2>Welcome {{ user.username }}</h2>
+    {% else %}
+        <h2>Welcome Anonymous</h2>
+        <p>Need new account? <a href="{% url 'account:signup' %}">Register here</a>. Already have an Account?<a
+                href="{% url 'account:login' %}">Sign in</a></p>
+    {% endif %}
+{% endblock %}
